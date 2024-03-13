@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-// Structure to represent a node in the BST
 struct Node {
  int data;
  struct Node *left;
  struct Node *right;
 };
-// Function to create a new node
 struct Node *createNode(int value) {
  struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
  if (newNode == NULL) {
@@ -18,7 +16,6 @@ struct Node *createNode(int value) {
  newNode->right = NULL;
  return newNode;
 }
-// Function to insert a node into the BST
 struct Node *insertNode(struct Node *root, int value) {
  if (root == NULL) {
  return createNode(value);
@@ -41,7 +38,6 @@ void inorderTraversal(struct Node *root) {
  
 }
 }
-// Function to traverse the BST in Preorder
 void preorderTraversal(struct Node *root) {
  if (root != NULL)
 {
@@ -54,7 +50,6 @@ void preorderTraversal(struct Node *root) {
  
 }
 }
-// Function to traverse the BST in Postorder
 void postorderTraversal(struct Node *root) {
  if (root != NULL) {
  postorderTraversal(root
@@ -66,15 +61,14 @@ void postorderTraversal(struct Node *root) {
  
 }
 }
-// Function to search for a key in the BST
 int searchBST(struct Node *root, int key) {
  if (root == NULL) {
- return 0; // Key not found
+ return 0;
  
 }
  if (root
 ->data == key) {
- return 1; // Key found
+ return 1;
  
 }
  if (key < root
