@@ -12,8 +12,7 @@ struct Employee {
  struct Employee *next;
 };
 struct Employee *createEmployee() {
- struct Employee *newEmployee = (struct Employee *)malloc(sizeof(struct 
-Employee));
+ struct Employee *newEmployee = (struct Employee *)malloc(sizeof(struct Employee));
  if (newEmployee == NULL) {
  printf("Memory allocation failed.\n");
  exit(1);
@@ -29,13 +28,12 @@ Employee));
  scanf(" %[^\n]", newEmployee->Designation);
  printf("Salary: ");
  scanf("%f", &newEmployee->Sal);
-printf("Phone Number: ");
+ printf("Phone Number: ");
  scanf(" %[^\n]", newEmployee->PhNo);
  newEmployee->prev = NULL;
  newEmployee->next = NULL;
  return newEmployee;
 }
-// Function to display an employee's details
 void displayEmployee(struct Employee *employee) {
  printf("SSN: %s\n", employee->SSN);
  printf("Name: %s\n", employee->Name);
@@ -44,7 +42,6 @@ void displayEmployee(struct Employee *employee) {
  printf("Salary: %.2f\n", employee->Sal);
  printf("Phone Number: %s\n", employee->PhNo);
 }
-// Function to create a doubly linked list of employees with end insertion
 struct Employee *createDLL(struct Employee *head, int N) {
  for (int i = 0; i < N; i++) {
  struct Employee *newEmployee = createEmployee();
@@ -62,7 +59,6 @@ struct Employee *createDLL(struct Employee *head, int N) {
  }
  return head;
 }
-// Function to display the status of the DLL and count the number of nodes
 void displayDLL(struct Employee *head) {
  struct Employee *current = head;
  int count = 0;
@@ -78,7 +74,6 @@ displayEmployee(current);
  printf("Total number of nodes: %d\n", count);
  }
 }
-// Function to insert an employee at the end of the DLL
 struct Employee *insertEnd(struct Employee *head) {
  struct Employee *newEmployee = createEmployee();
  if (head == NULL) {
@@ -94,7 +89,6 @@ struct Employee *insertEnd(struct Employee *head) {
  printf("Employee added to the end of the list.\n");
  return head;
 }
-// Function to delete an employee from the front of the DLL
 struct Employee *deleteFront(struct Employee *head) {
  if (head == NULL) {
  printf("Doubly Linked List is empty. Nothing to delete.\n");
@@ -109,13 +103,12 @@ struct Employee *deleteFront(struct Employee *head) {
  }
  return head;
 }
-// Function to demonstrate how the DLL can be used as a double-ended queue
 struct Employee *enqueueFront(struct Employee *head) {
- head = insertEnd(head); // Enqueue at the end to simulate enqueue at the front
+ head = insertEnd(head);
  return head;
 }
 struct Employee *dequeueEnd(struct Employee *head) {
- head = deleteFront(head); // Dequeue from the front to simulate dequeue at the end
+ head = deleteFront(head);
  return head;
 }
 int main() {
