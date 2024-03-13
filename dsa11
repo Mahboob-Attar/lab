@@ -1,22 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX_CITIES 20
-// Structure to represent a graph
 struct Graph {
  int vertices;
  int adjMatrix[MAX_CITIES][MAX_CITIES];
 };
-// Function to create a graph of cities
 struct Graph createGraph(int N) {
  struct Graph graph;
  graph.vertices = N;
- // Initialize the adjacency matrix with all zeros
  for (int i = 0; i < N; i++) {
  for (int j = 0; j < N; j++) {
  graph.adjMatrix[i][j] = 0;
  }
  }
- // Populate the adjacency matrix with connections between cities
  printf("Enter connections between cities (0 for no connection, 1 for connection):\n");
  for (int i = 0; i < N; i++) {
  for (int j = 0; j < N; j++) {
@@ -38,13 +34,11 @@ void DFS(struct Graph graph, int start, int visited[]) {
  }
  }
 }
-// Function to print all nodes reachable from a given starting node using DFS
 void printDFS(struct Graph graph, int start) {
  int visited[MAX_CITIES] = {0};
  printf("Nodes reachable from City %d using DFS:\n", start + 1);
  DFS(graph, start, visited);
 }
-// Function to perform Breadth-First Search (BFS) from a starting node
 void BFS(struct Graph graph, int start, int visited[]) {
  int queue[MAX_CITIES];
  int front = -1, rear = -1;
@@ -61,7 +55,6 @@ void BFS(struct Graph graph, int start, int visited[]) {
  }
  }
 }
-// Function to print all nodes reachable from a given starting node using BFS
 void printBFS(struct Graph graph, int start) {
  int visited[MAX_CITIES] = {0};
  printf("Nodes reachable from City %d using BFS:\n", start + 1);
@@ -75,9 +68,7 @@ int N, startCity;
  printf("Enter the starting city to explore: ");
  scanf("%d", &startCity);
  if (startCity > 0 && startCity <= N) {
- // Print reachable nodes using DFS
  printDFS(cityGraph, startCity - 1);
- // Print reachable nodes using BFS
  printBFS(cityGraph, startCity - 1);
  } else {
  printf("Invalid starting city. Please enter a valid city number.\n");
