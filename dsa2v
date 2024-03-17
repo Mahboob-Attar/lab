@@ -16,7 +16,7 @@ int flag=0;
 i=m=c=j=0;
 while(str[c]!='\0')
 {
-if(str[m]==pat[i])//Pattern matching
+if(str[m]==pat[i])
 {
 i++;
 m++;
@@ -30,7 +30,7 @@ c=m;
 flag=1;
 }
 }
-else//pattern mismatch
+else
 {
 ans[j]=str[c];
 j++;
