@@ -1,3 +1,6 @@
+a)
+
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -42,4 +45,25 @@ default:push(sym-'0');
  }
 }
 printf("The result if %d\n",pop());
+}
+
+
+
+
+b)
+
+#include<stdio.h>
+void hanoi(int n,char s,char t, char d)
+{
+    if(n==0)return;
+    hanoi(n-1,s,t,d);
+    printf("move disc%dfrom%cto%c\n",n,s,d);
+    hanoi(n-1,s,t,d);
+}
+int main()
+{
+    int n;
+    printf("Enter number of disc\n");
+    scanf("%d",&n);
+    hanoi(n,'A','B','C');
 }
