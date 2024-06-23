@@ -20,7 +20,7 @@ def Water_Jug_Problem(X, Y):
             Water_Jug_Problem(X + min(Y, (J1 - X)), Y - min(Y, (J1 - X))) or
             Water_Jug_Problem(X - min(X, (J2 - Y)), Y + min(X, (J2 - Y)))):
             return True
-        path.pop()  # Remove current state from the path if it doesn't lead to a solution
+        path.pop()  
     return False
 
 J1 = 4
