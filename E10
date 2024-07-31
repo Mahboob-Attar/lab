@@ -1,4 +1,3 @@
-9)
 db.catalog.insertMany([
 { _id: 1, subject: 'mongoDB', author: 'xyz', views: 50 }, 
 { _id: 2, subject: 'mongoDB', author: 'efg', views: 5 },
@@ -9,12 +8,6 @@ db.catalog.insertMany([
 { _id: 7, subject: 'machine learning', author: 'efg', views: 10 },
 { _id: 8, subject: 'operating system', author: 'xyz', views: 10 }] )
 
-db.student.createIndex({subject:’text’})
-db.catalog.find({$text:{$search:' dbms '}})
-db.catalog.find({$text:{$search:'dbms -ai'}})
-db.catalog.find({$text:{$search:'mongodb',$caseSensitive:true}})
-
-10)
 db.catalog.aggregate({$match:{$text:{$search:'machine'}}})
 db.catalog.aggregate({$match:{$text:{$search:'machine'}}},{$project:{subject:1,views:1,_id:0}})
 db.catalog.aggregate({$match:{$text:{$search:'machine'}}},{$project:{subject:1,views:1,_id:0}},{$sort:{views:-1}})
