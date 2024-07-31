@@ -1,8 +1,8 @@
 A)
 db.students.insertMany([
   { "studentID": 1, "name": "Student1", "age": 22, "city": "New York", "tags": ["tag1", "tag2", "tag3"] },
-  { "studentID": 2, "name": "Student2", "age": 25, "city": "San Francisco", "tags": ["tag1", "tag2", "tag3"] },
-  { "studentID": 3, "name": "Student3", "age": 30, "city": "Los Angeles", "tags": ["tag1", "tag2", "tag3"] },
+  { "studentID": 2, "name": "Student2", "age": 25, "city": "India", "tags": ["tag1", "tag2", "tag3"] },
+  { "studentID": 3, "name": "Student3", "age": 30, "city": "London", "tags": ["tag1", "tag2", "tag3"] },
   { "studentID": 4, "name": "Student4", "age": 35, "city": "Chicago", "tags": ["tag1", "tag2", "tag3"] },
   { "studentID": 5, "name": "Student5", "age": 40, "city": "New York", "tags": ["tag1", "tag2", "tag3"] },
 
