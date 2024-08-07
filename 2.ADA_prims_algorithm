@@ -37,4 +37,3 @@ void main()
             scanf("%d",&cost[i][j]); 
     prim(); 
 }
-
