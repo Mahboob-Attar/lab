@@ -14,7 +14,7 @@ int main() {
     scanf("%d", &n);
     printf("Enter the knapsack capacity: ");
     scanf("%d", &m);
-    printf("Enter profit followed by weight:\n");
+    printf("Enter the values and weights for items:\n");
     for (i = 1; i <= n; i++) {
         scanf("%d %d", &p[i], &w[i]);
     }
