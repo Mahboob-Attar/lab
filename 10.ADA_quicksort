@@ -3,7 +3,6 @@
 #include<stdlib.h>
 
 struct timeval t;
-
 void swap(int *x, int *y);
 int partition(int a[], int m, int n);
 void quicksort(int a[], int x, int y);
@@ -12,23 +11,17 @@ int main()
 {
     double start, end;
     int a[1000], i, n;
-
     printf("Enter the size of an array\n");
     scanf("%d", &n);
-
-    // Initializing the array with random values
-    for(i = 0; i < n; i++) {
-        a[i] = rand() % 1000; // random values between 0 and 999
+    for(i = 0; i < n; i++)
+    {
+        a[i] = rand() % 1000; 
     }
-
     gettimeofday(&t, NULL);
     start = t.tv_sec + (t.tv_usec / 1000000.0);
-
     quicksort(a, 0, n-1);
-
     gettimeofday(&t, NULL);
     end = t.tv_sec + (t.tv_usec / 1000000.0);
-
     printf("Time taken to sort %d elements: %f seconds\n", n, end - start);
     return 0;
 }
@@ -65,6 +58,7 @@ int partition(int a[], int m, int n)
     swap(&a[j], &a[m]);
     return j;
 }
+
 void quicksort(int a[], int x, int y)
 {
     int p;
