@@ -9,19 +9,11 @@ void main()
 	 int a[100000],i,j,n;
 	 printf("Enter the size of array\n");
 	 scanf("%d",&n);
-	 /*printf("Enter array elements\n");*/
-	 for(i=0;i<n;i++)
-		  { a[i]=rand()%55;}
 	 gettimeofday(&t,NULL);
 	 start=t.tv_sec+(t.tv_usec/1000000.0);
 	 quicksort(a,0,n-1);
 	 gettimeofday(&t,NULL);
 	 end=t.tv_sec+(t.tv_usec/1000000.0);
-	 /*printf("The sorted array is - \n");
-	 for(i=0;i<n;i++)
-		 {printf("%d\t",a[i]);
-		 }
-	 printf("\n");*/
 	 printf("Time taken to sort %d elements is = %lf\n",n,end-start);
 }
 void swap(int *x,int *y)
