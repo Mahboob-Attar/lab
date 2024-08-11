@@ -8,7 +8,7 @@ db.people.insertMany([
   { name: "Emily", age: 30 },
   { name: "David", age: 38 },
   { name: "Sarah", age: 29 }
-]);
+])
 
 // $avg
 db.people.aggregate([{ $group: { _id: null, avgAge: { $avg: "$age" } } }])
