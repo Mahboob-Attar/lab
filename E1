@@ -6,8 +6,6 @@ db.people.insertMany([
   { name: "Alice", age: 32, gender: "female" }
 ])
 
-
-
 // Find documents where age is greater than 25 and gender is "male"
 db.people.find({ $and: [{ age: { $gt: 25 } }, { gender: "male" }] })
 
