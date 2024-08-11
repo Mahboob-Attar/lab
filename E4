@@ -16,7 +16,7 @@ db.students2.insertMany([
     grades: [ { score: 78, grade: "C" },
               { score: 95, grade: "A" },
               { score: 92, grade: "A" } ] } 
-]);
+])
 
 
 // $ projection operator
