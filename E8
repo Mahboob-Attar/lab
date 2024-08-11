@@ -5,6 +5,7 @@ db.students.insertMany([
   { "studentID": 3, "name": "Student3", "age": 30, "city": "London", "tags": ["tag1", "tag2", "tag3"] },
   { "studentID": 4, "name": "Student4", "age": 35, "city": "Chicago", "tags": ["tag1", "tag2", "tag3"] },
   { "studentID": 5, "name": "Student5", "age": 40, "city": "New York", "tags": ["tag1", "tag2", "tag3"] },
+])
 
 db.students.createIndex({ studentID: 1 }, { unique: true });
 db.students.createIndex({ city: 1 }, { sparse: true });
