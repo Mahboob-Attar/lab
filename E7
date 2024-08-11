@@ -96,16 +96,18 @@ db.products.insertMany([
 ])
 
 
-db.products.aggregate([ { $unwind: "$reviews" },
-  { $group: {
-              _id: "$name",
-              totalReviews: { $sum: 1 },
-              averageRating: { $avg: "$reviews.rating" },
-              comments: { $push: "$reviews.comment" } } },
+db.products.aggregate([
+{ $unwind: "$reviews" },
+
+{ $group: { _id: "$name",
+           totalReviews: { $sum: 1 },
+           averageRating: { $avg: "$reviews.rating" },
+            comments: { $push: "$reviews.comment" } } },
                        
   {$project: {
               _id: 0,
               product: "$_id",
               totalReviews: 1,
               averageRating: 1,
-              comments: 1} } ]).pretty()
+              comments: 1} }
+]).pretty()
