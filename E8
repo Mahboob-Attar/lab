@@ -22,7 +22,6 @@ db.students.find({}).sort({age: -1}).limit(1).explain();
 // Explain the query with execution statistics
 db.students.find({}).sort({age: -1}).limit(1).explain("executionStats");
 
-
 *********************
 // 8 b. import the document provided into collection named stocks created by you.  
 db.stocks.find({}).sort({location: -1}).limit(1).explain("executionStats").executionStats.totalDocsExamined
@@ -31,10 +30,9 @@ db.stocks.find({}).sort({location: -1}).limit(1).explain("executionStats").execu
 db.stocks.find({}).sort({ location: -1 }).limit(1).explain("executionStats").executionStats.executionTimeMillis;
 // output: 423
 
-
 db.stocks.createIndex({location: 1}) 
 // output : location_1
-  
+
 db.stocks.find({}).sort({location: -1}).limit(1).explain("executionStats").executionStats.totalDocsExamined
 //    output : 1 
 
