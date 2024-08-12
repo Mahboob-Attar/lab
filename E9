@@ -1,28 +1,13 @@
- A)
-import both files from the data set given to a collection name catalog already created.
+9A.  import both files from the data set given to a collection name catalog already created.
 
-    db.catalog.createIndex({ name: "text", genre: "text" })   
-    // output: name_text_genre_text
-
-    db.catalog.countDocuments()
-    //    output:    1400
-
-    db.catalog.find({$text: {$search:"maga"}}) 
-// output: {
-- - - - - - - - - - }
-
+db.createCollection("catalog")
+db.catalog.createIndex({ name: "text", genre: "text" })   
+db.catalog.countDocuments()
+db.catalog.find({$text: {$search:"maga"}})
 db.catalog.createIndex({ name: "text", description: "text" })
 db.catalog.getIndexes()
-// //output : {- - - - - - - - -- 
-- - ---------------------}
 
-
-B)
-
+9B
 db.catalog.find({$text:{$search:"crime romance -action"}, year:2021})  //to exclude action based movies
-//   output: {- - - - - - - 
-              - - - --   - - }
-
-db.catalog.find({$text:{$search:"maga -da maga"}}) 
-// output:{- - - - - - - 
-              - - - --   - - }
+db.catalog.find({$text:{$search:"maga -da maga"}})
+ 
